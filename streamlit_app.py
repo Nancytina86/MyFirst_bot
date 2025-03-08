@@ -5,7 +5,7 @@ from openai import OpenAI
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 # Title of the app
-st.title("Nancy's Health Advisory")
+st.title("Nancy's HealthInsurance Advisory")
 
 # Initialize session state for chat history
 if "messages" not in st.session_state:
@@ -18,9 +18,9 @@ for message in st.session_state.messages:
         st.markdown(content)
 
 # Collect user input for symptoms
-user_input = st.chat_input("Describe your symptoms here...")
+user_input = st.chat_input("Describe your issues here...")
 
-# Function to get a response from OpenAI with health advice
+# Function to get a response from OpenAI with health insurance advice
 def get_response(prompt):
     # Here, you may include a more specific prompt or fine-tune the assistant's instructions to provide general remedies
     response = client.chat.completions.create(
